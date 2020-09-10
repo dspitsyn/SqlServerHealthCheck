@@ -11,9 +11,9 @@ SET NOCOUNT ON;
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 		
 SELECT 
-	 OBJECT_SCHEMA_NAME(object_id) AS 'Schema_Name'
-	,OBJECT_NAME(object_id) 'Table_Name'
-	,COUNT(*) Num_Cols
+	  OBJECT_SCHEMA_NAME(object_id) AS 'Schema_Name'
+	, OBJECT_NAME(object_id) 'Table_Name'
+	, COUNT(*) Num_Cols
 FROM sys.columns
 WHERE OBJECTPROPERTY(object_id, 'IsUserTable') = 1
 GROUP BY object_id
